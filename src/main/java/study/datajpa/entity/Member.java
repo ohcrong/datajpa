@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString(of = {"id","username","age"})
+@ToString(of = {"id","userName","age"})
 public class Member {
 
     @Id
