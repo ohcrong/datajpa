@@ -10,15 +10,19 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString(of = {"id","teamName"})
+@ToString(of = {"id","name"})
 public class Team {
 
     @Id
     @GeneratedValue
     @Column(name = "team_id")
     private Long id;
-    private String teamName;
+    private String name;
 
-    @OneToMany(mappedBy = "member_id")
+    @OneToMany(mappedBy = "team")
     private List<Member> members = new ArrayList<>();
+
+    public Team(String name) {
+        this.name = name;
+    }
 }
