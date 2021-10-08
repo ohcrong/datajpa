@@ -15,17 +15,5 @@ import static org.junit.jupiter.api.Assertions.*;
 @Transactional
 public class TeamRepositoryTest {
 
-    @Autowired
-    MemberRepository memberRepository;
 
-    @Test
-    public void findByUsernameAndAgeGreaterThan(){
-        Member a = new Member("A", 20);
-        Member b = new Member("A", 30);
-        memberRepository.save(a);
-        memberRepository.save(b);
-
-        List<Member> members = memberRepository.findByUsernameAndAgeGreaterThan("A", 15);
-        Assertions.assertThat(members.get(0).getAge()).isEqualTo(30);
-    }
 }
