@@ -26,7 +26,7 @@ class MemberRepositoryTest {
         Member b = new Member("A", 30);
         memberRepository.save(a);
         memberRepository.save(b);
-
+        //namedQuery
         List<Member> members = memberRepository.findByUsernameAndAgeGreaterThan("A", 15);
         Assertions.assertThat(members.get(0).getAge()).isEqualTo(30);
     }
